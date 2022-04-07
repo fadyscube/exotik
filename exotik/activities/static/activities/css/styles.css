@@ -1,0 +1,96 @@
+.random {
+    margin: 15px auto;
+    width: 80%;
+    background: var(--element-blue-dark-dark-2);
+    border-radius: 8px;
+    padding: 48px 40px;
+    color: var(--white);
+}
+
+@media only screen and (min-width: 600px) {
+    .random {
+        margin: 15px auto;
+        width: 75%;
+        background: var(--element-blue-dark-dark-2);
+        border-radius: 8px;
+        padding: 48px 40px;
+        color: var(--white);
+    }    
+}
+
+.select-box .types-container {
+    background-color: #5b50d6;
+    color: #f5f6fa;
+    max-height: 0;
+    width: 50%;
+    transition: all 0.3s;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.selected {
+    background: #5b50d6;
+    border-radius: 4px;
+    margin-bottom: 2px;
+    width: 50%;
+    color: #f5f6fa;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.select-box .types-container.active {
+    max-height: 240px;
+}
+
+.select-box .type,
+.selected {
+    padding: 2px 16px;
+    cursor: pointer;
+}
+
+.select-box .type:hover {
+    background: #847ae6;
+}
+
+.select-box label {
+    cursor: pointer;
+}
+
+.select-box .type .radio {
+    display: none;
+}
+
+.random-top {
+    display: flex;
+    width: 100%;
+}
+
+.random-heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.random-btn {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-top: 20px;
+}
+
+.random-btn button {
+    width: 100%;
+}
+
+.activity-parent {
+    background-color: var(--white);
+    color: var(--black);
+    padding: 5px;
+    border-radius: 4px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    display: none;
+}

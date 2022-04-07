@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        {% block css %}{% endblock css %}
+        <title>{% block title %}{% endblock title %} | Exotik</title>
+    </head>
+    <body>
+        <div>
+            <div class="tl-edges">
+                <div>
+                    {% include 'layouts/partials/header.html' %}
+                    <div class="body">
+                        {% block body %}
+                        {% endblock body %}
+                    </div>
+                    {% include 'layouts/partials/footer.html' %}
+                </div>
+            </div>
+        </div>
+        {% block js %}{% endblock js %}
+    </body>
+</html>
+

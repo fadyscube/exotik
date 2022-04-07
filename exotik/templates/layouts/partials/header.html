@@ -1,0 +1,37 @@
+{% load static %}
+
+<header class="header">
+    <div class="container">
+        <img width="50" src="{% static 'img/exotik.png' %}" alt="Exotik logo" />
+        <div class="menu">
+            <nav>
+                <div class="menu-link">
+                    <a href="{% url 'activities:random' %}">
+                        <button>
+                            Random activities
+                        </button>
+                    </a>
+                </div>
+                <div class="menu-link">
+                    <button>
+                        Todo list
+                    </button>
+                </div>
+                <div class="menu-link">
+                    <button>
+                        Calendar
+                    </button>
+                </div>
+                <div class="menu-link">
+                    <button>
+                        Game
+                    </button>
+                </div>
+            </nav>
+            <div class="menu-buttons">
+                <a href="https://start.qovery.com?formId=yFDkReLr" class="btn-outline menu-login">Login</a>
+                <a href="https://start.qovery.com/" class="btn menu-register">Sign up</a>
+            </div>
+        </div>
+    </div>
+</header>

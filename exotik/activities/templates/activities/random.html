@@ -1,0 +1,72 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'activities/css/styles.css' %}">
+{% endblock css %}
+
+{% block body %}
+<div class="main">
+    <div class="random"> 
+        <h2 class="random-heading">Generate random activity</h2>
+        <div class="select-box">
+            <div class="selected">
+                Select activity type
+            </div>
+            <div class="types-container">
+                <div class="type">
+                    <input type="radio" class="radio" name="category">
+                    <label for="all">All</label>
+                </div>
+                
+                <div class="type">
+                    <input type="radio" class="radio" id="charity" name="category">
+                    <label for="charity">Charity</label>
+                </div>
+                
+                <div class="type">
+                    <input type="radio" class="radio" id="cooking" name="category">
+                    <label for="cooking">Cooking</label>
+                </div>
+                
+                <div class="type">
+                    <input type="radio" class="radio" id="diy" name="category">
+                    <label for="diy">Do It Yourself</label>
+                </div>
+                
+                <div class="type">
+                    <input type="radio" class="radio" id="recreational" name="category">
+                    <label for="recreational">Recreational</label>
+                </div>
+                
+                <div class="type">
+                    <input type="radio" class="radio" id="relaxation" name="category">
+                    <label for="relaxation">Relaxation</label>
+                </div>
+                
+                <div class="type">
+                    <input type="radio" class="radio" id="social" name="category">
+                    <label for="social">Social</label>
+                </div>
+
+                <div class="type">
+                    <input type="radio" class="radio" id="education" name="category">
+                    <label for="education">Education</label>
+                </div>
+            </div>
+        </div>
+        <div class="random-btn">
+            <button class="btn">Generate random activity</button>
+        </div>
+        <div class="activity-parent"></div>
+    </div>
+    
+</div>
+{% endblock body %}
+
+{% block js %}
+<script src="{% static 'activities/js/app.js' %}"></script>
+{% endblock js %}

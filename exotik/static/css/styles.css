@@ -1,0 +1,344 @@
+.main .container .top {
+    margin-left: -16px
+}
+
+.main-top .left {
+    float: left;
+}
+
+.main-top .right {
+    float: left;
+}
+
+.btn-left {
+    margin-right: 16px;
+}
+
+@media(min-width:768px) {
+    .main .container .top {
+        margin-left: -24px;
+    }
+
+    .card-parent {
+        padding-left: 24px;
+        width: 50%;
+    }
+
+    .main-top .left {
+        width: 50%
+    }
+
+    .main-top .right {
+        width: 50%
+    }
+}
+
+@media(min-width:1240px) {
+    .main .container .top {
+        margin-left: -32px;
+    }
+
+    .card-parent {
+        padding-left: 32px;
+        width: 25%;
+    }
+
+    .main-top {
+        display: flex;
+    }
+    .main-top .left {
+        width: 41.7%;
+    }
+    .main-top .right {
+        width: 58.3333333333%;
+        margin-left: 8.3333333333%;
+    }
+}
+
+.top-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+@media(min-width:768px) {
+    .do-cards {
+        margin-top: 64px;
+    }
+}
+
+@media(min-width:1240px) {
+    .card-parent {
+        margin-bottom: 0;
+    }
+}
+
+.top-heading {
+    color: var(--white);
+    margin-bottom: 24px;
+}
+
+.top-tag {
+    background: var(--text-black-lighter);
+    border-radius: 3px;
+    color: #c2bcfa;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    height: 24px;
+    letter-spacing: .02em;
+    line-height: 24px;
+    overflow: hidden;
+    padding: 0 8px;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-bottom: 16px;
+}
+
+.link-social {
+    align-items: center;
+    border: 1px solid var(--text-white-darker);
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    height: 32px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 32px
+}
+
+.link-social svg {
+    height: 16px;
+    width: 16px
+}
+
+.link-social svg path {
+    fill: var(--text-black-light);
+    transition: fill .2s ease
+}
+
+.link-social:hover {
+    border-color: #5b50d6
+}
+
+.link-social:hover svg path {
+    fill: #5b50d6
+}
+
+.header {
+    background-color: #23243c;
+    padding: 8px 0;
+    position: absolute;
+    transition: all .2s ease;
+    width: 100%;
+    z-index: 4;
+}
+
+.header .container {
+    align-items: center;
+    display: flex;
+    justify-content: space-between
+}
+
+.header nav {
+    display: none
+}
+
+.menu-link {
+    border-bottom: 1px solid var(--element-gray-light-lighter);
+    font-size: 16px;
+    font-weight: 400;
+    padding: 24px 32px
+}
+
+.menu-link:first-child {
+    border-top: 1px solid var(--element-gray-light-lighter)
+}
+
+.menu-link button {
+    padding: 0
+}
+
+.menu-link button {
+    align-items: center;
+    color: var(--text-black-lighter);
+    display: flex;
+    justify-content: space-between;
+    width: 100%
+}
+
+.menu-buttons {
+    display: none
+}
+
+.menu-register {
+    background: var(--white);
+    color: var(--black);
+}
+
+.menu-login {
+    margin-right: 16px;
+}
+
+.do-title {
+    text-align: center;
+}
+
+.footer .container div {
+    font-size: 12px;
+    line-height: 18px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+@media(min-width:1000px) {
+    .header .container {
+        justify-content: flex-start
+    }
+    .header nav {
+        align-items: center;
+        display: flex
+    }
+    .menu-link {
+        border: 0 solid transparent;
+        font-weight: 500;
+        margin-right: 8px;
+        padding: 16px 0
+    }
+    .menu-link:first-child {
+        border: 0
+    }
+    .menu-link:last-child {
+        margin-right: 0
+    }
+    .menu-link button {
+        color: var(--white);
+        padding: 8px 20px
+    }
+    .menu-link button:hover {
+        background: rgba(91, 80, 214, .1);
+        border-radius: 4px;
+        color: var(--white)
+    }
+    .menu {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-left: 100px;
+    }
+}
+
+@media(min-width:1240px) {
+    .menu-buttons {
+        display: flex
+    }
+}
+
+.footer {
+    padding: 64px 0
+}
+
+.main {
+    padding-bottom: 32px;
+    padding-top: 56px;
+}
+
+.top-title {
+    margin-top: 60px;
+    text-align: center;
+}
+
+@media(min-width:768px) {
+    .header {
+        padding: 0;
+        background-color: transparent;
+    }
+    .main {
+        background: url(/static/img/header.png);
+        background-size: 100% 100%;
+        padding-bottom: 120px;
+        padding-top: 72px
+    }
+    .main .container {
+        margin-top: 96px;
+    }
+    .main .container .top {
+        align-items: center;
+        display: flex;
+    }
+    .top-title {
+        margin-top: 0;
+        padding-left: 32px;
+        text-align: left;
+    }
+    .top-title h1 {
+        max-width: 428px
+    }
+    .top-title .f {
+        justify-content: flex-start
+    }
+    .top-title p {
+        max-width: 364px
+    }
+}
+
+.card {
+    background: var(--element-blue-dark-lightest-2);
+    border-radius: 8px;
+    height: 316px;
+    min-width: 285px;
+    padding: 48px 32px 32px
+}
+
+.card svg {
+    max-width: 100%
+}
+
+.do-cards {
+    margin-top: 56px;
+    margin-top: 64px;
+}
+
+.card-parent {
+    float: left;
+    margin-bottom: 24px;
+}
+
+.card-description {
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--gray-5);
+    margin-bottom: 0;
+    margin-top: 16px;
+}
+
+@media(min-width:1240px) {
+    .card {
+        height: 332px
+    }
+    .card svg {
+        max-width: 221px
+    }
+    .card p {
+        max-width: 80%
+    }
+}
+
+.section-do {
+    margin-top: 100px
+}
+
+@media(min-width:768px) {
+    .section-do {
+        margin-top: 128px
+    }
+}
+
+@media(min-width:768px) {
+    .top-buttons {
+        justify-content: flex-start;
+    }
+}
