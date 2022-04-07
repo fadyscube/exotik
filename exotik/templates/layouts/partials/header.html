@@ -29,8 +29,8 @@
                 </div>
             </nav>
             <div class="menu-buttons">
-                <a href="https://start.qovery.com?formId=yFDkReLr" class="btn-outline menu-login">Login</a>
-                <a href="https://start.qovery.com/" class="btn menu-register">Sign up</a>
+                <a href="{% url 'accounts:login' %}" class="btn-outline menu-login">Login</a>
+                <a href="{% url 'accounts:register' %}" class="btn menu-register">Sign up</a>
             </div>
         </div>
     </div>
