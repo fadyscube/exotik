@@ -2,7 +2,8 @@
 
 <header class="header">
     <div class="container">
-        <img width="50" src="{% static 'img/exotik.png' %}" alt="Exotik logo" />
+        <!-- <img width="50" src="{% static 'img/exotik.png' %}" alt="Exotik logo" /> -->
+        <a href="{% url 'index' %}"><h2 style="color: #958bff;">Exotik</h2></a>
         <div class="menu">
             <nav>
                 <div class="menu-link">
@@ -13,14 +14,18 @@
                     </a>
                 </div>
                 <div class="menu-link">
-                    <button>
-                        Todo list
-                    </button>
+                    <a href="{% url 'todos:index' %}">
+                        <button>
+                            Todo list
+                        </button>
+                    </a>
                 </div>
                 <div class="menu-link">
-                    <button>
-                        Calendar
-                    </button>
+                    <a href="{% url 'todos:calendar' %}">
+                        <button>
+                            Calendar
+                        </button>
+                    </a>
                 </div>
                 <div class="menu-link">
                     <button>

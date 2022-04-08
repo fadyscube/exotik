@@ -13,12 +13,12 @@
     <div class="random"> 
         <h2 class="random-heading">Generate random activity</h2>
         <div class="select-box">
-            <div class="selected">
+            <div id="all" class="selected">
                 Select activity type
             </div>
             <div class="types-container">
                 <div class="type">
-                    <input type="radio" class="radio" name="category">
+                    <input type="radio" class="radio" id="all" name="category">
                     <label for="all">All</label>
                 </div>
                 
@@ -62,6 +62,12 @@
             <button class="btn">Generate random activity</button>
         </div>
         <div class="activity-parent"></div>
+        <form class="add-todo-form" action="{% url 'todos:add_todo' %}" method="post">
+            {% csrf_token %}
+            <input class="add-random-form" type="hidden" name="title" id="title" value="">
+            <input style="display: none;" type="checkbox" checked name="is_random" id="is_random">
+            <button type="submit" class="btn random-todo">Add to the todo list</button>
+        </form>
     </div>
     
 </div>

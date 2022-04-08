@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 
+from decouple import config
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,7 +27,7 @@ SECRET_KEY = 'django-insecure-17_9gc_w4r!)af^hjkk1+zl*d$_cgg^qg_^m*#w(kp_xciigzo
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -40,6 +42,7 @@ INSTALLED_APPS = [
 
     'activities.apps.ActivitiesConfig',
     'accounts.apps.AccountsConfig',
+    'todos.apps.TodosConfig',
 ]
 
 MIDDLEWARE = [
@@ -80,8 +83,11 @@ WSGI_APPLICATION = 'exotik.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config('DATABASE_NAME'),
+        'USER': config('DATABASE_USER'),
+        'PASSWORD': config('DATABASE_PASSWORD'),
+        'PORT': config('DATABASE_PORT'),
     }
 }
 

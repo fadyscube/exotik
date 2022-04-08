@@ -17,11 +17,18 @@ typesList.forEach(t => {
 
 const randomButton = document.querySelector('.random-btn .btn');
 const randomActivity = document.querySelector('.activity-parent');
+const addRandomForm = document.querySelector('.add-random-form');
+const addTodoForm = document.querySelector('.add-todo-form');
 randomButton.addEventListener('click', () => {
-    fetch(`https://www.boredapi.com/api/activity?type=${selected.id}`)
+    fetch(`/activities/random_api?type=${selected.id}`)
         .then(response => response.json())
         .then(data => {
-            randomActivity.innerHTML = `<p>${data.activity}</p>`;
+            console.log(data.activity);
+            randomActivity.innerHTML = `
+                <p>${data.activity}</p>
+            `;
+            addRandomForm.value = data.activity;
+            addTodoForm.style.display = 'block';
             randomActivity.style.display = 'block';
         });
 })

@@ -1,0 +1,36 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+{% load str_to_date %}
+
+{% block title %}Todo list{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'todos/css/styles.css' %}">
+{% endblock css %}
+
+{% block body %}
+<div class="main">
+    <div class="todos">
+        {% csrf_token %}
+        <h2 class="todos-heading">Todo list of {{ date|str_to_date }}</h2>
+
+        <div class="tasks">
+            <div class="tasks">
+                {% for task in tasks %}
+                    <div class="task">
+                        <p class="task-name" type="text">{{ task }}</p>
+                        <a href="{% url 'todos:remove_task' task.id %}?next={{ request.path }}" id="{{ task.id }}" class="task-remove"><i class="fa-solid fa-xmark"></i></a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<div id="csrf_token" style="display: none;">{{ csrf_token }}</div>
+{% endblock body %}
+
+
+{% block js %}
+<script src="{% static 'todos/js/app.js' %}"></script>
+{% endblock js %}

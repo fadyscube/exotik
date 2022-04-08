@@ -30,7 +30,7 @@
                 <div class="clearfix">
                     <div class="card-parent">
                         <div class="card">
-                            <a href="#"><h3 style="color: #a097f2;">1. Random activities</h3></a>
+                            <a href="{% url 'activities:random' %}"><h3 style="color: #a097f2;">1. Random activities</h3></a>
                             <svg width="300" height="8" fill="none" viewBox="0 0 300 8">
                                 <path fill="#a097f2" d="M0 0h293.991L300 4l-6.009 4H0l6.39-4L0 0z"></path>
                             </svg>
@@ -39,7 +39,7 @@
                     </div>
                     <div class="card-parent">
                         <div class="card">
-                            <a href="#"><h3 style="color: #3ab0e9;">2. Todo list</h3></a>
+                            <a href="{% url 'todos:index' %}"><h3 style="color: #3ab0e9;">2. Todo list</h3></a>
                             <svg width="300" height="8" fill="none" viewBox="0 0 300 8">
                                 <path fill="#3ab0e9" d="M0 0h293.991L300 4l-6.009 4H0l6.39-4L0 0z"></path>
                             </svg>
@@ -48,7 +48,7 @@
                     </div>
                     <div class="card-parent">
                         <div class="card">
-                            <a href="#"><h3 style="color: #cb87f6;">3. Calendar</h3></a>
+                            <a href="{% url 'todos:calendar' %}"><h3 style="color: #cb87f6;">3. Calendar</h3></a>
                             <svg width="300" height="8" fill="none" viewBox="0 0 300 8">
                                 <path fill="#cb87f6" d="M0 0h293.991L300 4l-6.009 4H0l6.39-4L0 0z"></path>
                             </svg>
@@ -57,7 +57,7 @@
                     </div>
                     <div class="card-parent">
                         <div class="card">
-                            <a href="#"><h3 style="color: #f8d441;">4. Game</h3></a>
+                            <a href="{% url 'todos:calendar' %}"><h3 style="color: #f8d441;">4. Game</h3></a>
                             <svg width="300" height="8" fill="none" viewBox="0 0 300 8">
                                 <path fill="#f8d441" d="M0 0h293.991L300 4l-6.009 4H0l6.39-4L0 0z"></path>
                             </svg>

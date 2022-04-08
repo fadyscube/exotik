@@ -20,6 +20,7 @@
     }
 
     .card-parent {
+        float: left;
         padding-left: 24px;
         width: 50%;
     }
@@ -70,6 +71,7 @@
 @media(min-width:1240px) {
     .card-parent {
         margin-bottom: 0;
+        float: left;
     }
 }
 
@@ -131,9 +133,8 @@
     background-color: #23243c;
     padding: 8px 0;
     position: absolute;
-    transition: all .2s ease;
     width: 100%;
-    z-index: 4;
+    /* z-index: 4; */
 }
 
 .header .container {
@@ -303,7 +304,6 @@
 }
 
 .card-parent {
-    float: left;
     margin-bottom: 24px;
 }
 

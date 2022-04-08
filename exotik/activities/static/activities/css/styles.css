@@ -1,28 +1,35 @@
 .random {
     margin: 15px auto;
-    width: 80%;
+    width: 90%;
     background: var(--element-blue-dark-dark-2);
     border-radius: 8px;
     padding: 48px 40px;
     color: var(--white);
 }
 
-@media only screen and (min-width: 600px) {
+.add-todo-form {
+    margin-top: 10px;
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+@media only screen and (min-width: 768px) {
     .random {
-        margin: 15px auto;
-        width: 75%;
-        background: var(--element-blue-dark-dark-2);
-        border-radius: 8px;
-        padding: 48px 40px;
-        color: var(--white);
-    }    
+        width: 80%;
+    }
+
+    .add-todo-form {
+        width: 50%;
+    }
 }
 
 .select-box .types-container {
     background-color: #5b50d6;
     color: #f5f6fa;
     max-height: 0;
-    width: 50%;
+    width: 90%;
     transition: all 0.3s;
     border-radius: 4px;
     overflow: hidden;
@@ -34,7 +41,7 @@
     background: #5b50d6;
     border-radius: 4px;
     margin-bottom: 2px;
-    width: 50%;
+    width: 90%;
     color: #f5f6fa;
     margin-left: auto;
     margin-right: auto;
@@ -75,7 +82,7 @@
 .random-btn {
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 90%;
     margin-top: 20px;
 }
 
@@ -84,13 +91,31 @@
 }
 
 .activity-parent {
-    background-color: var(--white);
-    color: var(--black);
+    background-color: #23243c;
+    color: var(--white);
     padding: 5px;
     border-radius: 4px;
-    width: 50%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
     display: none;
+}
+
+@media(min-width:768px) {
+    .selected {
+        width: 50%;
+    }
+
+    .select-box .types-container {
+        width: 50%;
+    }
+
+    .random-btn {
+        width: 50%;
+    }
+
+    .activity-parent {
+        width: 50%;
+    }
 }

@@ -25,4 +25,5 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('activities/', include('activities.urls')),
     path('accounts/', include('accounts.urls')),
+    path('todos/', include('todos.urls')),
 ]
