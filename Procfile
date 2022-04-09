@@ -1,0 +1,1 @@
+web: gunicorn exotik.exotik.wsgi --log-file -
