@@ -24,7 +24,11 @@
                 <div class="tasks">
                     {% for task in tasks %}
                         <div class="task">
-                            <p class="task-name" type="text">{{ task }}</p>
+                            {% if task.done == False %}
+                                <p class="task-name" type="text"><a href="{% url 'todos:done_task' task.id %}?next={{ request.path }}">{{ task }}</a></p>
+                            {% else %}
+                                <p class="task-name" type="text"><a href="{% url 'todos:done_task' task.id %}?next={{ request.path }}"><strike>{{ task }}</strike></a></p>
+                            {% endif %}
                             <a href="{% url 'todos:remove_task' task.id %}?next={{ request.path }}" id="{{ task.id }}" class="task-remove"><i class="fa-solid fa-xmark"></i></a>
                         </div>
                     {% endfor %}
@@ -33,7 +37,6 @@
         </form>
     </div>
 </div>
-<div id="csrf_token" style="display: none;">{{ csrf_token }}</div>
 {% endblock body %}
 
 

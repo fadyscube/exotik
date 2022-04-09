@@ -14,8 +14,23 @@
         <form class="auth-form" method="post">
             {% csrf_token %}
             <h2 class="auth-heading">Login</h2>
+            {% if form.non_field_errors %}
+                {% for error in form.non_field_errors %}
+                    <p class="text-danger"><strong>{{ error }}</strong></p>
+                {% endfor %}
+            {% endif %}
             <input class="auth-input" type="text" name="username" id="username" placeholder="Username">
+            {% if form.username.errors %}
+                {% for error in form.username.errors %}
+                    <p class="text-danger"><strong>{{ error }}</strong></p>
+                {% endfor %}
+            {% endif %}
             <input class="auth-input" type="password" name="password" id="password" placeholder="Password">
+            {% if form.password.errors %}
+                {% for error in form.password.errors %}
+                    <p class="text-danger"><strong>{{ error }}</strong></p>
+                {% endfor %}
+            {% endif %}
             <input type="submit" class="btn auth-btn auth-btn" value="Login">
         </form>
     </div>

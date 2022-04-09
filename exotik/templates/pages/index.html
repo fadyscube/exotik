@@ -1,5 +1,7 @@
 {% extends 'layouts/base.html' %}
 
+{% load static %}
+
 {% block title %}Home{% endblock title %}
 
 {% block body %}
@@ -12,18 +14,20 @@
                     <h1 class="top-heading">Make Everyday a Little Less Ordinary</h1>
                     <p class="top-heading">Many activities to manage your time and break the routine with new ideas</p>
                     <div class="top-buttons">
-                        <a href="#activities" class="btn btn-left">See the activities</a>
-                        <a href="{% url 'accounts:register' %}" class="btn-outline">Sign up</a>
+                        <a href="#activities" class="btn btn-left">See the services</a>
+                        {% if not request.user.is_authenticated %}
+                            <a href="{% url 'accounts:register' %}" class="btn-outline">Sign up</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
-            <div class="right col col-md-6 col-lg-7 col-lg-offset-1">
-                <h1 class="top-heading">dakljdlksl</h1>
+            <div class="right">
+                <img class="landing-image" src="{% static 'img/exotik-screen.png' %}" alt="">
             </div>
         </section>
         <section id="activities" class="section-do">
             <div class="do-title">
-                <span class="top-tag">Activities</span>
+                <span class="top-tag">Services</span>
                 <h1 class="text-white">What does Exotik do?</h1>
             </div>
             <div class="do-cards">
@@ -57,11 +61,11 @@
                     </div>
                     <div class="card-parent">
                         <div class="card">
-                            <a href="{% url 'todos:calendar' %}"><h3 style="color: #f8d441;">4. Game</h3></a>
+                            <a href="{% url 'facts:index' %}"><h3 style="color: #f8d441;">4. Facts</h3></a>
                             <svg width="300" height="8" fill="none" viewBox="0 0 300 8">
                                 <path fill="#f8d441" d="M0 0h293.991L300 4l-6.009 4H0l6.39-4L0 0z"></path>
                             </svg>
-                            <p class="card-description">The Exotik game is a funny and basic game to play when you are bored.</p>
+                            <p class="card-description">With Exotik you can learn new facts you probably didn't know before about about science, literature, philosophy and other cool topics. .</p>
                         </div>
                     </div>
                 </div>

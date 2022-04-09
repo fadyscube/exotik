@@ -25,7 +25,7 @@ randomButton.addEventListener('click', () => {
         .then(data => {
             console.log(data.activity);
             randomActivity.innerHTML = `
-                <p>${data.activity}</p>
+                <a href="https://duckduckgo.com/?q=!ducky+${data.activity}" target="_blank">${data.activity}</a>
             `;
             addRandomForm.value = data.activity;
             addTodoForm.style.display = 'block';

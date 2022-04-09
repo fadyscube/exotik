@@ -13,26 +13,48 @@
 <div class="main">
     <div class="calendar">
         <h2 class="todos-heading text-white">Calendar</h2>
+        <div class="random-calendar">
+            <a class="btn random" href="{% url 'todos:random_calendar' %}">Generate random calendar <i class="fa-solid fa-wand-magic-sparkles"></i></a>
+        </div>
         <div class="clearfix">
             {% for date, tasks in data.items %}
                 <div class="date">
                     <div class="card">
-                        <a href="{% url 'todos:old_todo' date %}"><h3 class="date-title">{{ date|str_to_date }}</h3></a>
-                        <svg width="300" height="8" fill="none" viewBox="0 0 300 8">
-                            <path fill="#a097f2" d="M0 0h293.991L300 4l-6.009 4H0l6.39-4L0 0z"></path>
-                        </svg>
+                        {% if date == today %}
+                            <a href="{% url 'todos:old_todo' date %}"><h3 style="color: #cb87f6;" class="date-title">{{ date|str_to_date }}</h3></a>
+                            <svg width="300" height="8" fill="none" viewBox="0 0 300 8">
+                                <path fill="#cb87f6" d="M0 0h293.991L300 4l-6.009 4H0l6.39-4L0 0z"></path>
+                            </svg>
+                        {% else %}
+                            <a href="{% url 'todos:old_todo' date %}"><h3 class="date-title">{{ date|str_to_date }}</h3></a>
+                            <svg width="300" height="8" fill="none" viewBox="0 0 300 8">
+                                <path fill="#a097f2" d="M0 0h293.991L300 4l-6.009 4H0l6.39-4L0 0z"></path>
+                            </svg>
+                        {% endif %}
                         <div class="date-tasks">
                             {% for task in tasks %}
                                 {% if task.is_random %}
-                                    <div class="date-task is-random">
-                                        {{ task|truncatechars:24 }}
-                                    </div>
+                                    {% if task.done %}
+                                        <div class="date-task is-random">
+                                            <strike>{{ task|truncatechars:24 }}</strike>
+                                        </div>
+                                    {% else %}
+                                        <div class="date-task is-random">
+                                            {{ task|truncatechars:24 }}
+                                        </div>
+                                    {% endif %}
                                 {% else %}
-                                    <div class="date-task">
-                                        {{ task|truncatechars:24 }}
-                                    </div>
+                                    {% if task.done %}
+                                        <div class="date-task">
+                                            <strike>{{ task|truncatechars:24 }}</strike>
+                                        </div>
+                                    {% else %}
+                                        <div class="date-task">
+                                            {{ task|truncatechars:24 }}
+                                        </div>
+                                    {% endif %}
                                 {% endif %}
-                                {% endfor %}
+                            {% endfor %}
                         </div>
                     </div>
                 </div>

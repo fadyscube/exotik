@@ -1,0 +1,24 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block title %}Random facts{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'facts/css/styles.css' %}">
+{% endblock css %}
+
+{% block body %}
+<div class="main">
+    <div class="facts">
+        <h2 class="facts-heading">Learn new facts</h2>
+        <button class="btn random-btn">Show new fact</button>
+        <div class="fact"></div>
+    </div>
+</div>
+{% endblock body %}
+
+
+{% block js %}
+<script src="{% static 'facts/js/app.js' %}"></script>
+{% endblock js %}

@@ -14,12 +14,31 @@
         <form class="auth-form" method="post">
             {% csrf_token %}
             <h2 class="auth-heading">Sign up</h2>
+            {% if form.non_field_errors %}
+                {% for error in form.non_field_errors %}
+                    <p class="text-danger"><strong>{{ error }}</strong></p>
+                {% endfor %}
+            {% endif %}
             <input class="auth-input" type="text" name="username" id="username" placeholder="Username">
+            {% if form.username.errors %}
+                {% for error in form.username.errors %}
+                    <p class="text-danger"><strong>{{ error }}</strong></p>
+                {% endfor %}
+            {% endif %}
             <input class="auth-input" type="password" name="password1" id="password1" placeholder="Password">
+            {% if form.password1.errors %}
+                {% for error in form.password1.errors %}
+                    <p class="text-danger"><strong>{{ error }}</strong></p>
+                {% endfor %}
+            {% endif %}
             <input class="auth-input" type="password" name="password2" id="password2" placeholder="Confirm your passowrd">
+            {% if form.password2.errors %}
+                {% for error in form.password2.errors %}
+                    <p class="text-danger"><strong>{{ error }}</strong></p>
+                {% endfor %}
+            {% endif %}
             <input type="submit" class="btn auth-btn auth-btn" value="Sign up">
         </form>
     </div>
-    
 </div>
 {% endblock body %}

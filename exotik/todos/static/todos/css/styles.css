@@ -110,10 +110,6 @@
     padding-left: 10px;
 }
 
-.date-tasks {
-    margin-bottom: 1000px;
-}
-
 .calendar {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -122,6 +118,14 @@
 
 .is-random {
     border-left: 4px solid #f8d441;
+}
+
+.task-name a {
+    padding: 0;
+}
+
+.random-calendar {
+    text-align: center;
 }
 
 @media(min-width:768px) {

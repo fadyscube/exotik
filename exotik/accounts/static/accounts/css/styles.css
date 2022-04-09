@@ -7,6 +7,10 @@
     color: var(--white);
 }
 
+.text-danger {
+    color: #f50057;
+}
+
 @media only screen and (min-width: 768px) {
     .auth {
         width: 80%;

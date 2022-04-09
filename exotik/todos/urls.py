@@ -9,6 +9,7 @@ urlpatterns = [
     path('old_todo/<str:date>/', views.old_todo, name='old_todo'),
     path('add_todo/', views.add_todo, name='add_todo'),
     path('remove_task/<int:id>/', views.remove_task, name='remove_task'),
-    path('tasks_list/', views.tasks_list, name='tasks_list'),
+    path('done_task/<int:id>/', views.done_task, name='done_task'),
     path('calendar/', views.calendar, name='calendar'),
+    path('random_calendar/', views.random_calendar, name='random_calendar'),
 ]

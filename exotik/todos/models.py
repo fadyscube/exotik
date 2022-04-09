@@ -17,9 +17,9 @@ class Task(models.Model):
         return self.title
 
     @classmethod
-    def get_dates(self):
+    def get_dates(self, user):
         dates = []
-        for i in self.objects.all():
+        for i in self.objects.filter(user=user):
             if i.date not in dates:
                 dates.append(i.date)
 

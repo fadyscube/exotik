@@ -1,0 +1,24 @@
+.facts {
+    margin: 15px auto;
+    width: 90%;
+    background: var(--element-blue-dark-dark-2);
+    border-radius: 8px;
+    padding: 48px 40px;
+    color: var(--white);
+    text-align: center;
+}
+
+.facts-heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.random-btn {
+    margin-bottom: 20px;
+}
+
+@media(min-width:768px) {
+    .facts {
+        width: 80%;
+    }
+}

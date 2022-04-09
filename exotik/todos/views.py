@@ -4,13 +4,15 @@ from .forms import TaskForm
 
 from .models import Task
 
+from activities.models import Activity
+
 import datetime
 
-from django.http import HttpResponseRedirect, JsonResponse
+from django.http import Http404, HttpResponseRedirect
 
 from django.contrib.auth.decorators import login_required
 
-import calendar as cld
+import random as rd
 
 # Create your views here.
 
@@ -41,16 +43,6 @@ def add_todo(request):
 
 
 @login_required
-def tasks_list(request):
-    tasks = Task.objects.filter(date=str(datetime.date(datetime.now())), user=request.user).order_by('-id')
-
-    context = {
-        'tasks': tasks,
-    }
-    return JsonResponse({'data': str(render(request, 'todos/tasks.html', context=context).content.decode('utf-8'))})
-
-
-@login_required
 def remove_task(request, id):
     task = Task.objects.get(id=id)
 
@@ -69,7 +61,7 @@ def calendar(request):
     for i in days:
         data[i] = []
 
-    for date in Task.get_dates():
+    for date in Task.get_dates(user=request.user):
         for task in tasks:
             if task.date == date:
                 if len(data[date]) < 7:
@@ -77,6 +69,8 @@ def calendar(request):
         
     context = {
         'data': data,
+        'today': str(datetime.date.today()),
+
     }
     return render(request, 'todos/calendar.html', context)
 
@@ -112,3 +106,35 @@ def old_todo(request, date):
             'tasks': tasks,
         }
         return render(request, 'todos/future_todo.html', context)
+
+
+@login_required
+def done_task(request, id):
+    task = Task.objects.get(id=id)
+
+    if task.user == request.user:
+        if task.done == False:
+            task.done  = True
+        else:
+            task.done = False
+        task.save()
+        return HttpResponseRedirect(request.GET['next'])
+    else:
+        return Http404
+
+
+@login_required
+def random_calendar(request):
+    activities = []
+    for i in Activity.objects.all():
+        activities.append({
+            'id': i.id,
+            'activity': i.activity,
+            'type': i._type,
+        })
+
+    for date in Task.get_dates(user=request.user):
+        if date >= str(datetime.date.today()):
+            Task.objects.create(title=rd.choice(activities)['activity'], user=request.user, date=date, is_random=True)
+
+    return redirect('todos:calendar')

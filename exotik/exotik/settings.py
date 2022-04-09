@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'activities.apps.ActivitiesConfig',
     'accounts.apps.AccountsConfig',
     'todos.apps.TodosConfig',
+    'facts.apps.FactsConfig',
 ]
 
 MIDDLEWARE = [
