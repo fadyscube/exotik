@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-17_9gc_w4r!)af^hjkk1+zl*d$_cgg^qg_^m*#w(kp_xciigzo'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['exotik.herokuapp.com']
 
 
 # Application definition
@@ -44,9 +44,13 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'todos.apps.TodosConfig',
     'facts.apps.FactsConfig',
+
+    'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -128,7 +132,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
@@ -140,3 +143,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 LOGIN_REDIRECT_URL = 'index'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+import dj_database_url
+
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
