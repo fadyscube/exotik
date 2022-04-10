@@ -136,6 +136,8 @@ DATABASES = {'default': {}}
 
 if DEBUG == False:
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+    MIDDLEWARE += 'whitenoise.middleware.WhiteNoiseMiddleware'
+    INSTALLED_APPS += 'whitenoise.runserver_nostatic'
 
     import dj_database_url
 
@@ -151,7 +153,3 @@ else:
             'PORT': config('DATABASE_PORT'),
         }
     }
-
-    MIDDLEWARE += 'whitenoise.middleware.WhiteNoiseMiddleware'
-
-    INSTALLED_APPS += 'whitenoise.runserver_nostatic'
