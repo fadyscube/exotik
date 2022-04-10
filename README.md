@@ -31,3 +31,15 @@ gunicorn==20.1.0
 psycopg2==2.9.3
 python-decouple==3.6
 ```
+
+## Run migrations
+You need to run the migrations to create the tables in your database
+```bash
+$ python manage.py migrate
+```
+
+## Load database data
+You need to load the activities table in your database
+```bash
+$ python manage.py loaddata activities/dunps/activities/activities.json
+```
