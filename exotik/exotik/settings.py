@@ -135,9 +135,9 @@ LOGIN_REDIRECT_URL = 'index'
 DATABASES = {'default': {}}
 
 if DEBUG == False:
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-    MIDDLEWARE += 'whitenoise.middleware.WhiteNoiseMiddleware'
     INSTALLED_APPS += 'whitenoise.runserver_nostatic'
+    MIDDLEWARE += 'whitenoise.middleware.WhiteNoiseMiddleware'
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
     import dj_database_url
 
