@@ -1,4 +1,3 @@
-web: sh -c 'cd ./exotik'
-web: gunicorn exotik.wsgi --log-file - --log-level debug
+web: gunicorn --pythonpath exotik.wsgi
 python manage.py collectstatic --noinput
 python manage.py migrate
