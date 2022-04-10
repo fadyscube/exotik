@@ -136,7 +136,7 @@ LOGIN_REDIRECT_URL = 'index'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {}
+DATABASES = {'default': {}}
 
 if DEBUG == False:
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
