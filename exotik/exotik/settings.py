@@ -133,6 +133,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'index'
 
+# Database
+# https://docs.djangoproject.com/en/4.0/ref/settings/#databases
+
+DATABASES = {}
+
 if DEBUG == False:
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
@@ -141,8 +146,6 @@ if DEBUG == False:
     db_from_env = dj_database_url.config()
     DATABASES['default'].update(db_from_env)
 else:
-    # Database
-    # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
     DATABASES = {
         'default': {
