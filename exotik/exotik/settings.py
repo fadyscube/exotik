@@ -45,13 +45,9 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'todos.apps.TodosConfig',
     'facts.apps.FactsConfig',
-
-    'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -155,3 +151,7 @@ else:
             'PORT': config('DATABASE_PORT'),
         }
     }
+
+    MIDDLEWARE += 'whitenoise.middleware.WhiteNoiseMiddleware'
+
+    INSTALLED_APPS += 'whitenoise.runserver_nostatic'
