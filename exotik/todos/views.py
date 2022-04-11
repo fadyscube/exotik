@@ -63,7 +63,7 @@ def calendar(request):
 
     for date in Task.get_dates(user=request.user):
         for task in tasks:
-            if task.date == date:
+            if task.date == date and task.date in days:
                 if len(data[date]) < 7:
                     data[date].append(task)
         
@@ -133,7 +133,8 @@ def random_calendar(request):
             'type': i._type,
         })
 
-    for date in Task.get_dates(user=request.user):
+    days = [str(datetime.date.today() + datetime.timedelta(days=i)) for i in range(0 - datetime.date.today().weekday(), 7 - datetime.date.today().weekday())]
+    for date in days:
         if date >= str(datetime.date.today()):
             Task.objects.create(title=rd.choice(activities)['activity'], user=request.user, date=date, is_random=True)
 
