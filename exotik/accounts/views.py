@@ -5,7 +5,6 @@ from .forms import UserForm
 # Create your views here.
 
 def register(request):
-    # form = UserForm()
     if request.user.is_authenticated:
         return redirect('index')
 
